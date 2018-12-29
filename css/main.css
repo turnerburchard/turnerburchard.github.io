@@ -2,28 +2,67 @@ body {
   
     margin: 60px auto;
     width: 70%;
+
+  
 }
-nav ul, footer ul {
+
+
+nav ul {
     font-family:'Lato', sans-serif;
-    padding: 0px;
+    font-size: 20px;
+    list-style: none;
+    font-weight: bold;
+    border:  2px solid #7777;
+    border-radius: 10px;
+    Padding:  20px;
+    margin:  auto;
+    text-align: center;
+  
+}
+
+footer ul {
+    font-family:'Lato', sans-serif;
+    padding: 20px;
     list-style: none;
     font-weight: bold;
 }
-nav ul li, footer ul li {
+nav ul li {
     display: inline;
     margin-right: 20px;
+    color: #525252;
+    
+  /*  border: 2px outset #888;
+    border-radius: 20px;
+    background-color: #DFDFDF;
+    padding: 5px;
+  */
+  
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 20px;
+  
 }
 a {
     text-decoration: none;
-    color: #999;
+    color: #525252;
+    transition: font-size 2s, color 3s;
+  
 }
 a:hover {
     text-decoration: underline;
+    font-size: 1.2em;
+    color: #000000;
+   
+    
 }
 h1 {
     font-size: 4em;
     font-family: 'Lora', serif;
     font-weight: lighter;
+    text-align: center;
+  
 }
 p {
     font-size: 1.5em;
@@ -31,9 +70,16 @@ p {
     line-height: 1.4em;
     color: #333;
 }
+
+
+
+
 footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
+    text-align: center;
+    
+    
 }
 
 ul.posts { 
@@ -44,3 +90,14 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
+
+div ul li{
+  
+  font-family: Lato, sans-serif;
+  color: #333;
+  font-size: 1.2em;
+  
+  
+}
+
+
