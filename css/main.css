@@ -13,11 +13,10 @@ nav ul {
     font-size: 20px;
     list-style: none;
     font-weight: bold;
-    border:  2px solid #787878;
-    border-radius: 10px;
-    Padding:  20px;
+    border-bottom: 1px solid #d5d5d5;
     margin:  auto;
     text-align: center;
+    padding:  20px;
   
 }
 
@@ -31,13 +30,7 @@ nav ul li {
     display: inline;
     margin-right: 20px;
     color: #efefef;
-    
-  /*  border: 2px outset #888;
-    border-radius: 20px;
-    background-color: #DFDFDF;
-    padding: 5px;
-  */
-  
+     
 }
 
 footer ul li {
