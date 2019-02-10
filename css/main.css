@@ -40,14 +40,14 @@ footer ul li {
 }
 a {
     text-decoration: none;
-    color: #d8d8d8;
+    color: #ffffff;
     transition: font-size 2s, color 3s;
   
 }
 a:hover {
     text-decoration: underline;
     font-size: 1.2em;
-    color: #FFFFFF;
+    color: #56f6ff;
    
     
 }
@@ -94,5 +94,3 @@ div ul li{
   
   
 }
-
-
