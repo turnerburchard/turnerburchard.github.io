@@ -18,6 +18,7 @@ nav ul {
     margin:  auto;
     text-align: center;
     padding:  20px;
+    max-width: 600px;
   
 }
 
@@ -45,36 +46,40 @@ a {
     transition: font-size 2s, color 3s;
   
 }
+
 a:hover {
     text-decoration: underline;
-    font-size: 1.2em;
     color: #56f6ff;
-   
+
     
 }
+
 h1 {
-    font-size: 5em;
+    font-size: 350%;
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
     text-align: center;
-    color: #FFFFFF;
-  
+    margin: 15% 1em 1em;
+
 }
 p {
     font-size: 1.5em;
     font-family:  'Oxygen', sans-serif;
     line-height: 1.4em;
-    color: #d8d8d8;
+    color: #474747;
+    padding: 2em;
+    word-wrap: break-word;
+
 }
-
-
 
 
 footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
     text-align: center;
-    
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     
 }
 
@@ -94,4 +99,70 @@ div ul li{
   font-size: 1.2em;
   
   
+}
+
+.rectangle {
+    background-color: white;
+    border-radius: 5px;
+    max-width: 868px;
+    margin: 8% auto;
+    overflow: hidden;
+
+}
+
+
+#landing {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    background-color: white;
+    top: 0px;
+    left: 0px;
+}
+
+#landingButton {
+    display: inline-block;
+    border: 5px solid #474747;
+    border-radius: 4px;
+    color: #474747;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#landingButton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    font-family: 'Oxygen', sans-serif;
+}
+
+#landingButton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#landingButton:hover span {
+    padding-right: 25px;
+}
+
+#landingButton:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.landingInner {
+    position: fixed;
+    text-align: center;
+    width: 33%;
+    margin: 20% 33% auto;
 }
