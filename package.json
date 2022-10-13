@@ -1,0 +1,19 @@
+{
+  "name": "turnerburchard.github.io",
+  "version": "1.0.0",
+  "description": "Turner's Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "hi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/turnerburchard/turnerburchard.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/turnerburchard/turnerburchard.github.io/issues"
+  },
+  "homepage": "https://github.com/turnerburchard/turnerburchard.github.io#readme"
+}
