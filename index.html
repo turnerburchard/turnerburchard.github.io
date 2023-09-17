@@ -3,93 +3,142 @@
 <!-- Built from scratch by Turner Burchard -->
 
 <html lang="en">
-  <head>
-    <!-- Site Title --> 
-		<title>Turner Burchard</title>
-		
-		<!-- Icons and More --> 
-		<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
-        <link rel="manifest" href="site.webmanifest">
-        <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
-        <link rel="shortcut icon" href="/assets/icons/favicon.ico">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
-        <meta name="theme-color" content="#ffffff">
-		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="./css/main.css">
-		
-        <link href="https://fonts.googleapis.com/css?family=Oxygen|Lora|Raleway:300" rel="stylesheet">
-	</head>
-	<body id="body">
-		<div id="landing">
-			<div class="landingInner" style="font-size: 1.3em">
-				<p>Hello, I'm <span style="color: #60C6C8">Turner Burchard</span></p>
-				<p>I'm a full-stack developer from Bozeman, MT</p>
-				<button id="landingButton" style="vertical-align:middle"><span>See More</span></button>
-			</div>
-		</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turner Burchard</title>
 
-		<nav>
-    		<ul>
-              <li> <a href="/">Home </a> </li>
-              <li> | </li>
-	        	<!-- <li><a href="/about">About</a></li> -->
-              <li> <a href="/resume.pdf">Resume </a> </li>
-    		</ul>
-		</nav>
-		
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
 
+    <!-- Icons and More -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/assets/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 
-		<div class="rectangle">
-			<div style="display: flex">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen|Lora|Raleway:300" rel="stylesheet">
 
-				<img src="turner.png" alt="turner" style="width:25%; padding:2em; height:25%" />
-				<h1>Turner Burchard</h1>
-			</div>
+</head>
 
-
-
-
-
-
-			<p>
-				I'm an undergraduate student in the Montana State University School of Computing, currently
-				working toward an accelerated BS/MS in Computer Science.
-				My main focus is on improving the efficiency and beauty of modern data.
-				Looking for an environment where I	can
-				continue to grow alongside talented developers.
-			</p>
-
-			<div id="infoGrid">
-				<p class="number" style="grid-column: 1">4.00</p>
-				<p class="number" style="grid-column: 2">5</p>
-				<p class="number" style="grid-column: 3">118</p>
-
-				<p class="numInfo"> GPA </p>
-				<p class="numInfo"> President's List Semesters</p>
-				<p class="numInfo"> Course Credits </p>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#" style="font-size: 50px; font-family: 'Raleway', sans-serif">Turner Burchard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <!--
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                -->
+                <li class="nav-item">
+                    <a class="nav-link" href="resume.html">Resume</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 
+<div class="wrapper">
 
 
-			</div>
+<section id="about" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="assets/turner.jpg" alt="Turner Burchard" class="img-fluid rounded-circle" style="max-width: 70%;">
+            </div>
+            <div class="col-md-6">
+                <div class="about-me">
+                    <h3>About Me</h3>
+                    <p>
+                        Hello! I'm Turner Burchard, a passionate and driven computer scientist with a strong background in software engineering, research, and education. I thrive on solving complex problems and pushing the boundaries of what technology can achieve, in an
+                        environment where I can continue to
+                        grow alongside talented developers.
+                    </p>
+                    <p>
+                        Take a look at my <a href="/resume.html">resume</a> or <a href="mailto:tburchard4@gmail.com">email me</a> for more information.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="about-me">
+                <p>
+                    <strong>Professional Background:</strong> I'm currently an intern at <a href="https://quiq.com">Quiq</a>, where I'm contributing to the development of a conversational AI backend for a customer support web application. Using Scala and Python, I've had the opportunity to enhance user satisfaction by creating advanced AI chatbots with impressive LLM reasoning capabilities. My role as a full software engineer on a high-achieving team has allowed me to consistently exceed project expectations, with over 200 commits and thousands of lines of code contributed to more than 20 microservices.
+
+                    Before joining Quiq, I gained valuable experience as a Full Stack Engineering Intern at <a href="https://www.brightvine.com/">Brightvine</a>, where I worked on the creation of blockchain-based financial web applications from the ground up. In this role, I had the opportunity to work closely with a small development team, utilizing a modern microservices architecture with React frontend and Go backend.
+
+                    In addition to my industry experience, I served as a Teaching Assistant at Montana State University, where I led weekly class sessions and provided tutoring for courses in Honors Chemistry and Data Science with Python. Prior to that, I conducted research as an Undergraduate Research Scientist in the Wiedenheft Lab, where I applied my computational skills to model CRISPR and COVID in Python and Perl.
+
+                    I also had the privilege of interning with D.A. Davidson in IT Risk Management, where I streamlined processes using Python automation, achieving significant efficiency gains. In this role, I managed network proxy, email filters, and vendors for a large finance company.
+                </p>
+                <p>
+                    <strong>Education and Achievements</strong> I am currently pursuing a Bachelor of Science in Computer Science at Montana State University, where I am on track to graduate summa cum laude with honors. Over the course of my academic journey, I have consistently achieved a 4.0 GPA and earned a place on the President's List for eight semesters. I have also been recognized as a Presidential Scholar, an Honors College member, and an ACM officer. Additionally, I completed one semester of a Master's in Computer Science while earning my bachelor's degree.
+
+                    Prior to university, I graduated from Great Falls High School with an unweighted 4.0 GPA, ranking first in my class. I achieved a 35 ACT score and held leadership positions in various extracurricular activities, including Student Council, Speech and Debate, DECA, NHS, Band, and the School Board.
+                </p>
+                <p>
+                    <strong>Skills and Interests</strong> I have honed my technical skills in Scala, Python, React, Java, Go, SQL, C, Bash, Git, and Agile methodologies. Beyond my work in technology, I am an avid adventurer and enjoy climbing, skiing, hiking, and traveling. I'm also passionate about chess, gaming, drawing, and have a typing speed of 90 words per minute.
+                </p>
+                <p>
+                    <strong>Scholarships and Recognition</strong> Throughout my academic journey, I have been fortunate to receive several prestigious scholarships, including the Cameron Presidential Scholarship, National Merit Scholarship, MUS Honors Scholarship, and MUS STEM Scholarship. These recognitions have fueled my commitment to excellence in both academia and the professional world.
+                </p>
+            </div>
 
 
-		</div>
+        </div>
 
-		<footer>
-    		<ul>
-            	<li><a href="mailto:tburchard4@gmail.com">Email</a></li>
-        		<li><a href="https://github.com/turnerburchard">GitHub</a></li>
-				<li><a href="https://www.linkedin.com/in/turner-burchard/">LinkedIn</a></li>
-				<li><a href="https://twitter.com/turnerburchard">Twitter</a></li>
-            	<li><a href="https://www.instagram.com/turner.pic/">Instagram</a></li>
-			</ul>
-		</footer>
+    </div>
+</section>
 
-		<p id="footer2">Written from scratch by Turner Burchard</p>
-		<script src="fun.js"></script>
-	</body>
+<!-- Portfolio Section
+<section id="portfolio" class="bg-light py-5">
+    <div class="container">
+        <h2>Portfolio</h2>
+    </div>
+</section>
+
+ Contact Section
+<section id="contact" class="py-5">
+    <div class="container">
+        <h2>Contact Me</h2>
+    </div>
+</section>
+-->
+
+</div>
+
+<footer class="bg-dark text-white text-center py-3">
+    <ul class="list-inline">
+        <li class="list-inline-item"><a href="mailto:tburchard4@gmail.com" class="text-white">Email</a></li>
+        <li class="list-inline-item"><a href="https://github.com/turnerburchard" class="text-white">GitHub</a></li>
+        <li class="list-inline-item"><a href="https://www.linkedin.com/in/turner-burchard/" class="text-white">LinkedIn</a></li>
+        <li class="list-inline-item"><a href="https://www.instagram.com/turner.pic/" class="text-white">Instagram</a></li>
+    </ul>
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>
