@@ -28,7 +28,7 @@
 
 <body>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark custom-bg-dark-green">
     <div class="container">
         <a class="navbar-brand" href="#" style="font-size: 50px; font-family: 'Raleway', sans-serif">Turner Burchard</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,12 +37,12 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./projects.html">Projects</a>
                 </li>
                 <!--
-                <li class="nav-item">
-                    <a class="nav-link" href="#portfolio">Portfolio</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact</a>
                 </li>
@@ -63,15 +63,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img src="assets/turner.jpg" alt="Turner Burchard" class="img-fluid rounded-circle" style="max-width: 70%;">
+                <img src="assets/turner.jpg" alt="Turner Burchard" class="img-fluid rounded-circle" style="min-width: 320px; max-width: 65%; padding-bottom: 20px;">
             </div>
             <div class="col-md-6">
                 <div class="about-me">
                     <h3>About Me</h3>
                     <p>
-                        Hello! I'm Turner Burchard, a passionate and driven computer scientist with a strong background in software engineering, research, and education. I thrive on solving complex problems and pushing the boundaries of what technology can achieve, in an
-                        environment where I can continue to
-                        grow alongside talented developers.
+                        Hello! I'm Turner Burchard, a passionate and driven computer scientist with a strong background in software engineering, research, and education. I thrive on solving complex problems in an environment where I can grow alongside talented developers.
                     </p>
                     <p>
                         Take a look at my <a href="/resume.html">resume</a> or <a href="mailto:tburchard4@gmail.com">email me</a> for more information.
@@ -80,53 +78,136 @@
                 </div>
             </div>
 
-            <div class="about-me">
-                <p>
-                    <strong>Professional Background:</strong> I'm currently an intern at <a href="https://quiq.com">Quiq</a>, where I'm contributing to the development of a conversational AI backend for a customer support web application. Using Scala and Python, I've had the opportunity to enhance user satisfaction by creating advanced AI chatbots with impressive LLM reasoning capabilities. My role as a full software engineer on a high-achieving team has allowed me to consistently exceed project expectations, with over 200 commits and thousands of lines of code contributed to more than 20 microservices.
+            <div class="container-fluid">
+                <section class="work-experience">
+                    <h2>WORK EXPERIENCE</h2>
 
-                    Before joining Quiq, I gained valuable experience as a Full Stack Engineering Intern at <a href="https://www.brightvine.com/">Brightvine</a>, where I worked on the creation of blockchain-based financial web applications from the ground up. In this role, I had the opportunity to work closely with a small development team, utilizing a modern microservices architecture with React frontend and Go backend.
+                    <section class="work-experience">
+                        <h3>Quiq</h3>
+                        <p class="date">May 2023 – Present</p>
+                        <p class="job-location"><em>Conversational AI Backend Intern</em> <span class="location">Bozeman, MT</span></p>
+                        <p>Developed Scala and Python backend for a customer support AI web app, boosting user satisfaction.</p>
+                        <p>Collaborated as a full software engineer in a high-achieving team, consistently exceeding project expectations.</p>
+                        <p>Built customizable AI chatbots with advanced LLM reasoning abilities, boosting self-serve rates.</p>
+                        <p>Contributed to 20+ microservices, totaling 200+ commits and thousands of lines of code.</p>
+                    </section>
 
-                    In addition to my industry experience, I served as a Teaching Assistant at Montana State University, where I led weekly class sessions and provided tutoring for courses in Honors Chemistry and Data Science with Python. Prior to that, I conducted research as an Undergraduate Research Scientist in the Wiedenheft Lab, where I applied my computational skills to model CRISPR and COVID in Python and Perl.
 
-                    I also had the privilege of interning with D.A. Davidson in IT Risk Management, where I streamlined processes using Python automation, achieving significant efficiency gains. In this role, I managed network proxy, email filters, and vendors for a large finance company.
-                </p>
-                <p>
-                    <strong>Education and Achievements</strong> I am currently pursuing a Bachelor of Science in Computer Science at Montana State University, where I am on track to graduate summa cum laude with honors. Over the course of my academic journey, I have consistently achieved a 4.0 GPA and earned a place on the President's List for eight semesters. I have also been recognized as a Presidential Scholar, an Honors College member, and an ACM officer. Additionally, I completed one semester of a Master's in Computer Science while earning my bachelor's degree.
+                    <section class="work-experience">
+                        <div class="job">
+                            <h3>Brightvine</h3>
+                            <p class="date">Jan. 2022 – May 2023</p>
+                            <p class="job-location"><em>Full-stack Engineering Intern</em> <span class="location">Bozeman, MT</span></p>
+                            <p>Created multiple blockchain-based financial web applications from scratch as a primary or secondary engineer.</p>
+                            <p>Worked in a key role as a full-stack engineer in a small development team.</p>
+                            <p>Utilized a React frontend with a Go backend in a modern microservice architecture.</p>
+                        </div>
+                    </section>
 
-                    Prior to university, I graduated from Great Falls High School with an unweighted 4.0 GPA, ranking first in my class. I achieved a 35 ACT score and held leadership positions in various extracurricular activities, including Student Council, Speech and Debate, DECA, NHS, Band, and the School Board.
-                </p>
-                <p>
-                    <strong>Skills and Interests</strong> I have honed my technical skills in Scala, Python, React, Java, Go, SQL, C, Bash, Git, and Agile methodologies. Beyond my work in technology, I am an avid adventurer and enjoy climbing, skiing, hiking, and traveling. I'm also passionate about chess, gaming, drawing, and have a typing speed of 90 words per minute.
-                </p>
-                <p>
-                    <strong>Scholarships and Recognition</strong> Throughout my academic journey, I have been fortunate to receive several prestigious scholarships, including the Cameron Presidential Scholarship, National Merit Scholarship, MUS Honors Scholarship, and MUS STEM Scholarship. These recognitions have fueled my commitment to excellence in both academia and the professional world.
-                </p>
+                    <section class="work-experience">
+                        <div class="job">
+                            <h3>Montana State University</h3>
+                            <p class="date">Aug. 2021 – May 2022</p>
+                            <p class="job-location"><em>Teaching Assistant</em> <span class="location">Bozeman, MT</span></p>
+                            <p>Paid teaching and grading position for Honors Chemistry and Data Science with Python.</p>
+                            <p>Led weekly class sessions, tutoring 30+ students as a group and one-on-one.</p>
+                        </div>
+                    </section>
+
+                    <section class="work-experience">
+                        <div class="job">
+                            <h3>Wiedenheft Lab</h3>
+                            <p class="date">Aug. 2020 – May 2021</p>
+                            <p class="job-location"><em>Undergraduate Research Scientist</em> <span class="location">Bozeman, MT</span></p>
+                            <p>Modeled CRISPR and COVID in Python, Perl, and MATLAB in a computational biology research lab.</p>
+                            <p>Ran lab website with custom JavaScript, HTML, and CSS framework.</p>
+                        </div>
+                    </section>
+
+                    <section class="work-experience">
+                        <div class="job">
+                            <h3>D.A. Davidson</h3>
+                            <p class="date">June 2019 – Aug. 2021</p>
+                            <p class="job-location"><em>I.T. Risk Management Intern</em> <span class="location">Great Falls, MT</span></p>
+                            <p>Used Python automation to shrink a full summer project to weeks, achieving a 70% efficiency increase.</p>
+                            <p>Managed network proxy, email filters, and vendors for 3000+ employee finance company.</p>
+                        </div>
+                    </section>
+
+                    <section class="work-experience">
+                        <div class="job">
+                            <h3>D.A. Davidson Companies</h3>
+                            <p class="date">Jun 2017 - Dec 2018</p>
+                            <p class="job-location"><em>Scanner</em> <span class="location">Great Falls, MT</span></p>
+                            <p>Scanned, verified, and managed documents for the operations department.</p>
+                            <p>Worked full time for two summers and part-time during two school years.</p>
+                        </div>
+                    </section>
+
+                    <section class="work-experience">
+                        <div class="job">
+                            <h3>Great Falls Symphony Association</h3>
+                            <p class="date">Apr 2017</p>
+                            <p class="job-location"><em>Musician</em> <span class="location">Great Falls, MT</span></p>
+                            <p>Paid bassoonist in Great Falls symphony.</p>
+                        </div>
+                    </section>
+
+
+
+
+                </section>
+
+                <section class="education">
+                    <h2>EDUCATION</h2>
+
+                    <section class="education">
+                        <h3>Montana State University</h3>
+                        <p class="date">Aug. 2020 – May 2024</p>
+                        <p class="job-location"><em>BS, Computer Science</em> <span class="location">Bozeman, MT</span></p>
+                        <p>Graduating summa cum laude with honors, President’s List for 8 semesters, 4.0 GPA, 167 credits.</p>
+                        <p>Presidential Scholar, Honors College, ACM officer.</p>
+                        <p>Completed one semester of MS in Computer Science while earning bachelor’s degree.</p>
+                    </section>
+
+                    <section class="education">
+                        <div class="school">
+                            <h3>Great Falls High School</h3>
+                            <p class="job-location"><span class="date">Aug. 2016 – May 2020</span> <span class="location">Great Falls, MT</span></p>
+                            <p>4.0 GPA, Rank 1/252, 35 ACT.</p>
+                            <p>President: Student Council, Speech and Debate; Officer: DECA, NHS, Band, School Board.</p>
+                        </div>
+                    </section>
+
+
+                </section>
+
+                <section class="skills-interests">
+                    <h2>SKILLS, INTERESTS & SCHOLARSHIPS</h2>
+
+                    <div class="skills">
+                        <h3>Skills</h3>
+                        <p>Scala, Python, React, Java, Go, SQL, C, Bash, Git, Agile, 90 WPM.</p>
+                    </div>
+
+                    <div class="interests">
+                        <h3>Interests</h3>
+                        <p>Climbing, skiing, hiking, hacking, gaming, chess, photography, traveling.</p>
+                    </div>
+
+                    <div class="scholarships">
+                        <h3>Scholarships</h3>
+                        <p>Cameron Presidential Scholarship, National Merit Scholarship, MUS Honors, MUS STEM.</p>
+                    </div>
+
+                </section>
             </div>
-
-
         </div>
-
     </div>
 </section>
-
-<!-- Portfolio Section
-<section id="portfolio" class="bg-light py-5">
-    <div class="container">
-        <h2>Portfolio</h2>
-    </div>
-</section>
-
- Contact Section
-<section id="contact" class="py-5">
-    <div class="container">
-        <h2>Contact Me</h2>
-    </div>
-</section>
--->
-
 </div>
 
-<footer class="bg-dark text-white text-center py-3">
+<footer class="custom-bg-dark-green text-white text-center py-3">
     <ul class="list-inline">
         <li class="list-inline-item"><a href="mailto:tburchard4@gmail.com" class="text-white">Email</a></li>
         <li class="list-inline-item"><a href="https://github.com/turnerburchard" class="text-white">GitHub</a></li>
