@@ -44,14 +44,7 @@ footer {
 }
 
 body {
-    background-color: #f0f0f0; /* Light background */
-    color: #2b413d; /* Dark text */
-}
-
-header {
-    background-color: #2b413d; /* Dark background for header */
-    color: #ffffff; /* White text for header */
-    padding: 20px;
+    background-color: #f0f0f0;
 }
 
 h1 {
@@ -82,10 +75,10 @@ h1 {
 }
 
 .work-experience, .education, .skills-interests, .about-me {
-    background-color: #ffffff; /* White background for sections */
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a shadow to sections */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .container-fluid h2 {
