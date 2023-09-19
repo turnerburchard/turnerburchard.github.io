@@ -71,21 +71,27 @@ h1 {
     padding: 20px;
 }
 
-.work-experience, .education, .skills-interests, .about-me {
+.experience {
     background-color: #ffffff;
     padding: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.43);
+    border-bottom: solid 1px #6e736e;
 }
 
-.work-experience-outer {
+.experience:last-child {
+    border-bottom: none;
+}
+
+.experience-outer {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
 }
 
-.container-fluid h2 {
+.experience-outer h2 {
     padding-bottom: 20px;
+    font-size: 36px;
 }
 
 .project {
