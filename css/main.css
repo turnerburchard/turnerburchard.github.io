@@ -38,3 +38,56 @@ footer {
     font-size: 24px;
     font-family: 'Raleway', sans-serif
 }
+
+.custom-bg-dark-green {
+    background-color: #2b413d;
+}
+
+body {
+    background-color: #f0f0f0; /* Light background */
+    color: #2b413d; /* Dark text */
+}
+
+header {
+    background-color: #2b413d; /* Dark background for header */
+    color: #ffffff; /* White text for header */
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.job, .school, .skills, .interests, .scholarships {
+    margin-bottom: 20px;
+}
+
+.date {
+    font-weight: bold;
+}
+
+.job-location {
+    font-style: italic;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location {
+    font-style: italic;
+}
+
+.container-fluid {
+    padding: 20px;
+}
+
+.work-experience, .education, .skills-interests, .about-me {
+    background-color: #ffffff; /* White background for sections */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a shadow to sections */
+}
+
+.container-fluid h2 {
+    padding-bottom: 20px;
+}
