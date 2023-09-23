@@ -1,6 +1,6 @@
 html, body {
     height: 100%;
-    background-color: #d7d7d7;
+    background-color: #f0f2f0;
 }
 
 .wrapper {
@@ -91,7 +91,7 @@ h1 {
 
 .experience-outer h2 {
     padding-bottom: 20px;
-    font-size: 36px;
+    font-size: 40px;
 }
 
 .project {
