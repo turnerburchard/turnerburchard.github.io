@@ -105,3 +105,13 @@ h1 {
 .project h3 {
     margin-bottom: 20px;
 }
+
+.compiler {
+    position: relative;
+}
+
+.compiler img {
+    max-width: 100%;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
