@@ -131,15 +131,14 @@ h1 {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 0.0375rem; /* Rounded corners */
-    box-shadow: 0 0 15px rgba(0,0,0,0.1); /* Shadow effect */
+    border-radius: 0.0375rem;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 .gallery .col-lg-4 {
-    padding-bottom: 1rem; /* Spacing below each column */
+    padding-bottom: 1rem;
 }
 
-/* Optional: Adjust margin and padding for a cleaner look */
 .gallery .mb-4 {
     margin-bottom: 1.5rem;
 }

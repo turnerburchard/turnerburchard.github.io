@@ -26,6 +26,14 @@
 
 </head>
 
+<script>
+  window.onload = function() {
+    document.querySelectorAll('object').forEach(obj => obj.setAttribute('tabindex', '-1'));
+    window.scrollTo(0, 0);
+  };
+
+</script>
+
 <body>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark custom-bg-dark-green">
@@ -40,18 +48,18 @@
                   <a class="nav-link" href="index.html">About</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="./projects.html">Projects</a>
+                  <a class="nav-link" href="projects.html">Projects</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="./art.html">Art</a>
-              </li> 
+                  <a class="nav-link" href="art.html">Art</a>
+              </li>
               <li class="nav-item">
                   <a class="nav-link" href="resume.html">Resume</a>
               </li>
           </ul>
       </div>
   </div>
-</nav>    
+</nav>
 
 
 <div class="wrapper">
@@ -61,7 +69,7 @@
       <div class="project">
         <h3>ESOF 522 - Empirical Software Engineering – Final Project</h3>
 
-        <object data="files/Burchard_ESOF_522.pdf" type="application/pdf" width="100%" height="1000px">
+        <object tabindex="-1" data="files/Burchard_ESOF_522.pdf" type="application/pdf" width="100%" height="1000px">
           <p>Unable to display PDF file. <a href="files/Burchard_ESOF_522.pdf">Download</a> instead.</p>
         </object>
       </div>
@@ -88,7 +96,7 @@
       <div class="project">
         <h3>CSCI 546: Advanced Artificial Intelligence – Final Project</h3>
 
-        <object data="files/546_Final_Project.pdf" type="application/pdf" width="100%" height="1000px">
+        <object tabindex="-1" data="files/546_Final_Project.pdf" type="application/pdf" width="100%" height="1000px">
           <p>Unable to display PDF file. <a href="files/546_Final_Project.pdf">Download</a> instead.</p>
         </object>
       </div>
