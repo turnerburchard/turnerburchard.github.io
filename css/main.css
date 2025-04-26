@@ -238,3 +238,15 @@ h1 {
     display: block;
     margin: auto; /* Center image if it doesn't fill width */
 }
+
+/* Styling for logo links */
+.logo-link-img {
+    border-radius: 10px; /* Add rounded corners */
+    /* Add transition for subtle hover effect */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.logo-link-img:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Add a subtle shadow on hover */
+}
