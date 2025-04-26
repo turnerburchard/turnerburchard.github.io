@@ -103,4 +103,16 @@ const galleries = {
         console.error('Could not find gallery container or modal image element for event setup.');
     }
 
+    // Add copyright to footer
+    const footer = document.querySelector('footer');
+    if (footer) {
+        const year = new Date().getFullYear();
+        const copyrightText = document.createElement('p');
+        copyrightText.className = 'mt-3 mb-0'; // Add some margin
+        copyrightText.textContent = `© ${year} Turner Burchard`;
+        footer.appendChild(copyrightText);
+    } else {
+        console.error('Could not find footer element to add copyright.');
+    }
+
 });
