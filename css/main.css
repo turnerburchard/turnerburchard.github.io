@@ -154,6 +154,7 @@ h1 {
 .gallery-image {
     width: 100%; /* make image fill its column */
     height: auto; /* allow height to adjust based on aspect ratio */
+    min-height: 180px; /* Add min-height to reduce layout shift */
     /* max-height: 80vh; */ /* Removed - caused distortion */
     /* object-fit: cover; /* remove this - not needed with height: auto */
     border-radius: 5px;
