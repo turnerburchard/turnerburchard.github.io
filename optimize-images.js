@@ -39,14 +39,22 @@ async function findImageFiles(dir) {
 
 async function optimizeImage(filePath) {
     try {
-        console.log(`Processing: ${path.basename(filePath)}`);
         const image = sharp(filePath);
         const metadata = await image.metadata();
 
+        // Check if resizing is needed
         let needsResize = false;
         if (metadata.width > maxDimension || metadata.height > maxDimension) {
             needsResize = true;
         }
+
+        // Check if it's already an optimized JPEG
+        if (!needsResize) {
+            console.log(`Skipping already optimized JPEG: ${path.basename(filePath)}`);
+            return; // Don't process further
+        }
+
+        console.log(`Processing: ${path.basename(filePath)} ${needsResize ? '(resizing)' : ''}`);
 
         let sharpInstance = image;
 
