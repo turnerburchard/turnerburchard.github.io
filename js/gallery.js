@@ -60,10 +60,19 @@ const galleries = {
 
         shuffledImages.forEach(imageName => {
             const imgElement = document.createElement('img');
-            imgElement.src = gallery.path + imageName;
+            const fullSrc = gallery.path + imageName;
+            imgElement.src = fullSrc; // Use full source for grid image too
             imgElement.alt = `${galleryKey} image ${imageName}`;
-            imgElement.className = 'gallery-image'; // Use only our custom class
-            container.appendChild(imgElement); // Append image directly to container
+            imgElement.className = 'gallery-image'; 
+            imgElement.style.cursor = 'pointer'; // Add pointer cursor
+            imgElement.loading = 'lazy'; // Add native lazy loading
+
+            // Add attributes for Bootstrap modal
+            imgElement.setAttribute('data-toggle', 'modal');
+            imgElement.setAttribute('data-target', '#galleryModal');
+            imgElement.setAttribute('data-fullsrc', fullSrc); // Store full path
+
+            container.appendChild(imgElement); 
         });
     }
 
@@ -71,5 +80,27 @@ const galleries = {
     // The order here depends on the object key order, which isn't guaranteed.
     // But browsers often preserve insertion order, so 'photos' *should* load first.
     Object.keys(galleries).forEach(populateGallery);
+
+    // Event listener for modal
+    const modalImageElement = document.getElementById('modalImage');
+    const galleryContainer = document.getElementById('galleryTabContent');
+
+    if (galleryContainer && modalImageElement) {
+        galleryContainer.addEventListener('click', function(event) {
+            if (event.target.classList.contains('gallery-image')) {
+                const fullSrc = event.target.getAttribute('data-fullsrc');
+                if (fullSrc) {
+                    modalImageElement.setAttribute('src', fullSrc);
+                }
+            }
+        });
+
+        // Optional: Clear modal image src when modal is hidden to free memory
+        $('#galleryModal').on('hidden.bs.modal', function () {
+            modalImageElement.setAttribute('src', '');
+        });
+    } else {
+        console.error('Could not find gallery container or modal image element for event setup.');
+    }
 
 });
