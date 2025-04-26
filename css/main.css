@@ -210,3 +210,30 @@ h1 {
         padding-right: 10%;
     }
 }
+
+/* Modal Styling */
+.modal-dialog {
+    max-width: 90%; /* Allow modal to be wider on large screens */
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    border: none;
+}
+
+.modal-header {
+    border-bottom: none; /* Remove header border */
+}
+
+.modal-header .close {
+    color: white;
+    opacity: 0.9;
+    text-shadow: none;
+}
+
+.modal-gallery-image {
+    max-width: 100%;
+    max-height: 85vh; /* Limit image height to viewport */
+    display: block;
+    margin: auto; /* Center image if it doesn't fill width */
+}
