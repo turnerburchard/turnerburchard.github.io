@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turner Burchard - Gallery</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Icons and More -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/assets/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link href="https://fonts.googleapis.com/css?family=Oxygen|Lora|Raleway:300" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-bg-dark-green">
+    <div class="container">
+        <a class="navbar-brand" href="index.html" style="font-size: 50px; font-family: 'Raleway', sans-serif">Turner Burchard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="gallery.html">Gallery <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="resume.html">Resume</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4" id="galleryPageContainer">
+    <!-- Tab Navigation -->
+    <ul class="nav nav-tabs" id="galleryTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="photos-tab" data-toggle="tab" href="#photos" role="tab" aria-controls="photos" aria-selected="true">Photos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="wildlife-tab" data-toggle="tab" href="#wildlife" role="tab" aria-controls="wildlife" aria-selected="false">Wildlife</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="me-tab" data-toggle="tab" href="#me" role="tab" aria-controls="me" aria-selected="false">Me</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="art-tab" data-toggle="tab" href="#art" role="tab" aria-controls="art" aria-selected="false">Art</a>
+        </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="galleryTabContent">
+        <div class="tab-pane fade show active" id="photos" role="tabpanel" aria-labelledby="photos-tab">
+            <div class="gallery-container mt-3">
+                <!-- Photos images will be loaded here -->
+            </div>
+        </div>
+        <div class="tab-pane fade" id="wildlife" role="tabpanel" aria-labelledby="wildlife-tab">
+            <div class="gallery-container mt-3">
+                <!-- Wildlife images will be loaded here -->
+            </div>
+        </div>
+        <div class="tab-pane fade" id="me" role="tabpanel" aria-labelledby="me-tab">
+            <div class="gallery-container mt-3">
+                <!-- Me images will be loaded here -->
+            </div>
+        </div>
+        <div class="tab-pane fade" id="art" role="tabpanel" aria-labelledby="art-tab">
+            <div class="gallery-container mt-3">
+                <!-- Art images will be loaded here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="custom-bg-dark-green text-white text-center py-3 mt-4">
+    <ul class="list-inline">
+        <li class="list-inline-item"><a href="mailto:tburchard4@gmail.com" class="text-white">Email</a></li>
+        <li class="list-inline-item"><a href="https://github.com/turnerburchard" class="text-white">GitHub</a></li>
+        <li class="list-inline-item"><a href="https://www.linkedin.com/in/turner-burchard/" class="text-white">LinkedIn</a></li>
+        <li class="list-inline-item"><a href="https://www.instagram.com/turner.pic/" class="text-white">Instagram</a></li>
+    </ul>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Custom Gallery Script -->
+<script src="js/gallery.js"></script>
+
+</body>
+</html> 
