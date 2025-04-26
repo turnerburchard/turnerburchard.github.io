@@ -142,3 +142,71 @@ h1 {
 .gallery .mb-4 {
     margin-bottom: 1.5rem;
 }
+
+/* Masonry-like Gallery Styling */
+.gallery-container {
+    /* Default to 3 columns now for larger screens */
+    column-count: 3;
+    column-gap: 1rem; /* spacing between columns */
+    /* border: 1px solid red; /* Temporary debug border */
+}
+
+.gallery-image {
+    width: 100%; /* make image fill its column */
+    height: auto; /* allow height to adjust based on aspect ratio */
+    /* max-height: 80vh; */ /* Removed - caused distortion */
+    /* object-fit: cover; /* remove this - not needed with height: auto */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
+    display: block; /* necessary for column layout */
+    margin-bottom: 1rem; /* spacing below image */
+    break-inside: avoid; /* prevent images breaking across columns */
+}
+
+.gallery-image:hover {
+    transform: scale(1.03); /* slightly reduce hover scale */
+}
+
+/* Responsive column counts */
+/* No rule needed for >= 992px, defaults to 3 columns from above */
+
+/* Medium screens: 2 columns */
+@media (max-width: 991.98px) {
+    .gallery-container {
+        column-count: 2;
+    }
+}
+
+/* Small screens: 1 column */
+@media (max-width: 767.98px) {
+    .gallery-container {
+        column-count: 1;
+    }
+}
+
+/* Ensure tabs look okay */
+.nav-tabs .nav-link {
+    color: #2b413d; /* Match navbar color */
+}
+
+.nav-tabs .nav-link.active {
+    color: #495057; /* Default active tab color */
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+/* Base padding for gallery container */
+#galleryPageContainer.container {
+    padding-left: 5%; /* Base padding for smaller screens */
+    padding-right: 5%;
+}
+
+/* Increase padding and max-width on large screens */
+@media (min-width: 1200px) { /* Large devices (desktops, 1200px and up) */
+    #galleryPageContainer.container {
+        max-width: 1600px; /* Increase max width beyond Bootstrap default */
+        padding-left: 10%; /* Larger padding for larger screens */
+        padding-right: 10%;
+    }
+}
