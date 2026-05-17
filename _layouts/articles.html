@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include meta.html %}
+    <title>Articles — Turner Burchard</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: #faf8f4;
+            color: #1a1a1a;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        .index-outer {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 3.5rem 1.5rem 6rem;
+        }
+        .page-heading {
+            font-size: 2rem;
+            font-weight: normal;
+            color: #111;
+            margin-bottom: 3rem;
+        }
+        .post-list { list-style: none; padding: 0; margin: 0; }
+        .post-item {
+            padding: 1.75rem 0;
+            border-bottom: 1px solid #ebebeb;
+        }
+        .post-item:first-child { border-top: 1px solid #ebebeb; }
+        .post-date {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.8125rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.4rem;
+        }
+        .post-title {
+            font-size: 1.4rem;
+            font-weight: normal;
+            line-height: 1.3;
+            margin-bottom: 0.4rem;
+        }
+        .post-title a { text-decoration: none; color: #111; }
+        .post-title a:hover { color: #2b413d; }
+        .post-subtitle {
+            font-size: 1rem;
+            font-style: italic;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+            .page-heading { font-size: 1.6rem; }
+            .index-outer { padding: 2rem 1.25rem 4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="article-top">
+    <a href="/articles/">Turner Burchard</a>
+</header>
+
+<main class="index-outer">
+    <h1 class="page-heading">Articles</h1>
+
+    <ul class="post-list">
+        {% for post in site.posts %}
+        <li class="post-item">
+            <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+            <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            {% if post.subtitle %}<p class="post-subtitle">{{ post.subtitle }}</p>{% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</main>
+
+<footer class="article-bottom">
+    <p>Turner Burchard</p>
+</footer>
+
+</body>
+</html>

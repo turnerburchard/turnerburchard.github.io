@@ -1,0 +1,19 @@
+{% assign og_title = page.title | default: site.title %}
+{% assign og_description = page.subtitle | default: page.description | default: "Software engineer. Occasional essays on science, philosophy, and how things work." %}
+{% assign og_image = page.og_image | default: "/assets/images/og-default.png" | absolute_url %}
+{% assign og_url = page.url | absolute_url %}
+{% if page.layout == "article" %}{% assign og_type = "article" %}{% else %}{% assign og_type = "website" %}{% endif %}
+
+<meta name="description" content="{{ og_description }}">
+
+<meta property="og:type" content="{{ og_type }}">
+<meta property="og:title" content="{{ og_title }}">
+<meta property="og:description" content="{{ og_description }}">
+<meta property="og:image" content="{{ og_image }}">
+<meta property="og:url" content="{{ og_url }}">
+<meta property="og:site_name" content="Turner Burchard">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ og_title }}">
+<meta name="twitter:description" content="{{ og_description }}">
+<meta name="twitter:image" content="{{ og_image }}">

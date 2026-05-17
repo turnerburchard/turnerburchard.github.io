@@ -1,193 +1,45 @@
-<!DOCTYPE html>
-
-<!-- Built from scratch by Turner Burchard -->
-
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Turner Burchard - Projects</title>
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/main.css">
-
-  <!-- Icons and More -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="/assets/icons/favicon.ico">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
-
-  <link href="https://fonts.googleapis.com/css?family=Oxygen|Lora|Raleway:300" rel="stylesheet">
-
-</head>
-
-<script>
-  window.onload = function() {
-    document.querySelectorAll('object').forEach(obj => obj.setAttribute('tabindex', '-1'));
-    window.scrollTo(0, 0);
-  };
-
-</script>
-
-<body>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark custom-bg-dark-green">
-  <div class="container">
-      <a class="navbar-brand" href="index.html" style="font-size: 50px; font-family: 'Raleway', sans-serif">Turner Burchard</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                  <a class="nav-link" href="index.html">About</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="projects.html">Projects</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="gallery.html">Gallery</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="resume.html">Resume</a>
-              </li>
-          </ul>
-      </div>
-  </div>
-</nav>
-
+---
+layout: default
+title: Turner Burchard - Projects
+---
 
 <div class="wrapper">
-  <section id="projects" class="py-5">
+<section id="projects" class="py-5">
     <div class="container">
 
-      <!-- Logo Links -->
-      <div class="text-center mb-4">
-        <a href="https://geohexa.com" target="_blank" rel="noopener noreferrer">
-          <img src="files/geohexa_text_background_tall.png" alt="GeoHexa Logo" class="logo-link-img" style="max-width: 300px; height: auto;">
-        </a>
-      </div>
-
-      <div class="text-center mb-4">
-        <a href="https://orchara.com" target="_blank" rel="noopener noreferrer">
-          <img src="files/logo_text.png" alt="Orchara Logo" class="logo-link-img" style="max-width: 300px; height: auto;">
-        </a>
-      </div>
-
-      <div class="project">
-        <h3>ESOF 522 - Empirical Software Engineering – Final Project</h3>
-
-        <object tabindex="-1" data="files/Burchard_ESOF_522.pdf" type="application/pdf" width="100%" height="1000px">
-          <p>Unable to display PDF file. <a href="files/Burchard_ESOF_522.pdf">Download</a> instead.</p>
-        </object>
-      </div>
-
-      <div class="project">
-        <h3>CSCI 546: Advanced Artificial Intelligence – Final Project</h3>
-
-        <object tabindex="-1" data="files/546_Final_Project.pdf" type="application/pdf" width="100%" height="1000px">
-          <p>Unable to display PDF file. <a href="files/546_Final_Project.pdf">Download</a> instead.</p>
-        </object>
-      </div>
-
-      <div class="project">
-        <h3>Java Bytecode Compiler</h3>
-
-        <p>
-          <ul>
-            <li>Full compiler capable of tokenizing, parsing, evaluating, transpiling, and compiling </li>
-            <li>Statically typed BNF language (Catscript) </li>
-            <li>Written and designed with test-driven development </li>
-            <li>Available through web interface with Java Spark Webserver</li>
-          </ul>
-        </p>
-
-        <h5>Screenshot of final completed compiler (parse step): </h5>
-
-        <div class="compiler">
-          <img src="files/compiler.png" alt="Compiler">
-        </div>
-      </div>
-
-      <div class="project">
-        <h3>UX Design - HouseMate</h3>
-        <p>Chores and Roommates app designed to help users get their tasks done on time, like cleaning, water plants, and more.</p>
-
-        <div>
-          <div class="row">
-            <div class="col">
-              <img src="files/ux_app_1.png" alt="" class="ux">
-            </div>
-            <div class="col">
-              <img src="files/ux_app_2.png" alt="" class="ux">
-            </div>
-            <div class="col">
-              <img src="files/ux_app_3.png" alt="" class="ux">
-            </div>
-          </div>
-          <div class="row" style="text-align: center;">
-            <img src="files/ux_app_4.png" alt="" class="ux" style="margin: auto; display: block;">
-          </div>
-        </div>
-      </div>
-
-      <div class="project">
-        <h3>Multidisciplinary Engineering Design Rover</h3>
-        <p>Rover designed from scratch capable of remote control, sensing and streaming atmospheric data, travelling up steep hills, and more.</p>
-
-        <div>
-          <div class="row">
-            <div class="col">
-              <img src="files/donk.png" alt="Rover" class="donk">
-            </div>
-            <div class="col">
-              <img src="files/donk2.png" alt="Rover" class="donk">
-            </div>
-            <div class="col">
-              <img src="files/donk3.png" alt="Rover" class="donk">
-            </div>
-          </div>
+        <div class="text-center mb-4">
+            <a href="https://geohexa.com" target="_blank" rel="noopener noreferrer">
+                <img src="/files/geohexa_text_background_tall.png" alt="GeoHexa" class="logo-link-img" style="max-width: 300px; height: auto;">
+            </a>
         </div>
 
-      </div>
+        <div class="text-center mb-4">
+            <a href="https://orchara.com" target="_blank" rel="noopener noreferrer">
+                <img src="/files/logo_text.png" alt="Orchara" class="logo-link-img" style="max-width: 300px; height: auto;">
+            </a>
+        </div>
 
-      <div class="project">
-        <h3>Small functioning redis database CLI</h3>
+        <div class="project">
+            <h3>ESOF 522 — Empirical Software Engineering — Final Project</h3>
+            <object tabindex="-1" data="/files/Burchard_ESOF_522.pdf" type="application/pdf" width="100%" height="1000px">
+                <p>Unable to display PDF file. <a href="/files/Burchard_ESOF_522.pdf">Download</a> instead.</p>
+            </object>
+        </div>
 
-        <iframe src="https://trinket.io/embed/python/61f09020db" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <div class="project">
+            <h3>CSCI 546 — Advanced Artificial Intelligence — Final Project</h3>
+            <object tabindex="-1" data="/files/546_Final_Project.pdf" type="application/pdf" width="100%" height="1000px">
+                <p>Unable to display PDF file. <a href="/files/546_Final_Project.pdf">Download</a> instead.</p>
+            </object>
+        </div>
 
-      </div>
-
-      <div class="project">
-        <h3>Wolves in Yellowstone Final Paper</h3>
-
-        <object data="files/wolves.pdf" type="application/pdf" width="100%" height="1000px">
-          <p>Unable to display PDF file. <a href="files/wolves.pdf">Download</a> instead.</p>
-        </object>
-      </div>
+        <div class="project">
+            <h3>Wolves in Yellowstone</h3>
+            <object tabindex="-1" data="/files/wolves.pdf" type="application/pdf" width="100%" height="1000px">
+                <p>Unable to display PDF file. <a href="/files/wolves.pdf">Download</a> instead.</p>
+            </object>
+        </div>
 
     </div>
-  </section>
+</section>
 </div>
-
-<footer class="custom-bg-dark-green text-white text-center py-3">
-  <ul class="list-inline">
-    <li class="list-inline-item"><a href="mailto:tburchard4@gmail.com" class="text-white">Email</a></li>
-    <li class="list-inline-item"><a href="https://github.com/turnerburchard" class="text-white">GitHub</a></li>
-    <li class="list-inline-item"><a href="https://www.linkedin.com/in/turner-burchard/" class="text-white">LinkedIn</a></li>
-    <li class="list-inline-item"><a href="https://www.instagram.com/turner.pic/" class="text-white">Instagram</a></li>
-  </ul>
-</footer>
-
-
-<!-- Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
