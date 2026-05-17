@@ -1,6 +1,8 @@
 html, body {
-    height: 100%;
     background-color: #f2f0eb;
+}
+body {
+    min-height: 100vh;
 }
 
 .wrapper {
