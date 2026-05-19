@@ -1,0 +1,346 @@
+/* ============================================================
+   retro.css — activates when <html> has class "retro"
+   Inspired by cameronsworld.net / GeoCities-era personal sites
+   Uses real period GIFs hot-linked from gifcities.org
+   ============================================================ */
+
+/* ── Hide/show retro-only and modern-only elements ────────── */
+.retro-only { display: none; }
+html.retro .retro-only { display: revert; }
+html.retro .modern-only { display: none !important; }
+
+/* ── Toggle badge (lives in footer, morphs based on mode) ── */
+.retro-toggle {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 0.7rem;
+    color: #888;
+    opacity: 0.55;
+    padding: 4px 8px;
+    text-decoration: underline;
+    letter-spacing: 0.02em;
+}
+.retro-toggle:hover { opacity: 1; }
+.retro-toggle::before { content: "Best viewed in Netscape Navigator 4.0"; }
+
+/* Floating "exit" button — fixed top-right, only in retro mode */
+.retro-toggle-floating {
+    position: fixed;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 9999;
+}
+
+html.retro .retro-toggle {
+    display: inline-block;
+    background: #c0c0c0;
+    border: 3px outset #ffffff;
+    color: #000080;
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-decoration: none;
+    opacity: 1;
+    padding: 4px 14px;
+    letter-spacing: 0.02em;
+    margin: 0.5rem;
+    text-shadow: none;
+}
+html.retro .retro-toggle:hover { background: #ffff99; color: #ff0000; }
+html.retro .retro-toggle:active { border-style: inset; }
+html.retro .retro-toggle::before { content: "[ exit to " attr(data-year) " ]"; }
+
+/* ── Retro guestbook form ── */
+.retro-guestbook-form table { margin: 0 auto; }
+.retro-guestbook-form input[type="text"],
+.retro-guestbook-form input[type="email"],
+.retro-guestbook-form textarea {
+    border: 3px inset #ffffff;
+    background: #ffffff;
+    color: #000080;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1rem;
+    padding: 4px 6px;
+}
+.retro-guestbook-form textarea { resize: vertical; }
+.retro-submit-btn {
+    background: linear-gradient(#d0d0d0, #808080);
+    border: 4px outset #ffffff;
+    color: #000080;
+    font-family: "Impact", "Arial Black", sans-serif;
+    font-size: 1.1rem;
+    padding: 8px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    letter-spacing: 0.04em;
+}
+.retro-submit-btn:hover { background: linear-gradient(#e8e8e8, #a0a0a0); }
+.retro-submit-btn:active { border-style: inset; }
+
+/* ============================================================
+   FROM HERE DOWN: retro-mode styling
+   ============================================================ */
+
+html.retro {
+    background: #000033 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80'><circle cx='12' cy='17' r='0.9' fill='%23ffffff'/><circle cx='45' cy='9' r='0.6' fill='%23ffffff'/><circle cx='62' cy='34' r='1.1' fill='%23ffffff'/><circle cx='23' cy='51' r='0.7' fill='%23ffffff'/><circle cx='53' cy='63' r='0.9' fill='%23ffffff'/><circle cx='6' cy='68' r='0.5' fill='%23ffffff'/><circle cx='71' cy='72' r='0.6' fill='%23ffffff'/><circle cx='33' cy='28' r='0.4' fill='%23ffffff'/></svg>");
+    background-attachment: fixed;
+}
+
+html.retro body {
+    background: transparent !important;
+    font-family: "Times New Roman", Times, serif !important;
+    color: #ffffff !important;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-anchor: none;             /* stop the browser from auto-adjusting scroll when images decode */
+    overscroll-behavior-y: none;       /* kill macOS rubber-band that lets you scroll past content */
+}
+/* Reserve the scrollbar gutter at all times so layout doesn't jump when
+   content grows past the viewport or images finish loading. */
+html.retro { scrollbar-gutter: stable; }
+
+/* ── Hide modern nav and footer chrome ── */
+html.retro .site-nav,
+html.retro .site-footer {
+    display: none !important;
+}
+
+/* ── Floating decoration layer (real GIFs scattered Cameron's-World style) ── */
+.retro-deco-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+img.retro-deco {
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
+    filter: drop-shadow(0 0 6px rgba(0,0,0,0.6));
+    will-change: transform;
+    image-rendering: pixelated;
+}
+img.retro-deco.drift { animation: drift 30s ease-in-out infinite alternate; }
+@keyframes drift {
+    from { transform: translate(0, 0) rotate(var(--rot, 0deg)); }
+    to   { transform: translate(24px, -18px) rotate(var(--rot, 0deg)); }
+}
+
+/* Content sits above the deco layer (but don't override fixed-position elements like the floating toggle) */
+html.retro body > *:not(.retro-deco-layer):not(.retro-toggle-floating) { position: relative; z-index: 1; }
+
+/* ── Top marquee (real <marquee>, styled) ── */
+.retro-marquee {
+    display: block;
+    width: 100%;
+    border-top: 4px ridge #ff00ff;
+    border-bottom: 4px ridge #00ffff;
+    padding: 6px 0;
+    background: #000080;
+}
+
+/* ── Retro nav (button bar, table-styled) ── */
+.retro-nav {
+    text-align: center;
+    background: #c0c0c0;
+    padding: 10px;
+    border-top: 4px ridge #808080;
+    border-bottom: 4px ridge #808080;
+}
+.retro-nav a {
+    display: inline-block;
+    background: #d4d0c8;
+    border: 4px outset #ffffff;
+    color: #000080 !important;
+    font-family: "Arial Black", "Impact", sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 6px 14px;
+    margin: 3px 4px;
+}
+.retro-nav a:hover {
+    background: #ffff66;
+    color: #ff0000 !important;
+}
+.retro-nav a:active { border-style: inset; }
+
+/* ── Page content frame (centered table-style box) ── */
+html.retro .wrapper,
+html.retro #galleryPageContainer.container {
+    max-width: 760px;
+    margin: 2rem auto !important;
+    background: #fffff0;
+    color: #000080;
+    border: 6px ridge #c0c0c0;
+    padding: 2rem !important;
+    box-shadow: 10px 10px 0 #000;
+    min-height: 0;
+}
+
+html.retro .container { max-width: 100% !important; padding: 0 !important; }
+
+/* ── Headings ── */
+html.retro h1 {
+    font-family: "Impact", "Arial Black", sans-serif !important;
+    font-size: 3rem !important;
+    color: #ff00ff !important;
+    text-align: center !important;
+    text-shadow: 3px 3px 0 #00ffff, 6px 6px 0 #ffff00 !important;
+    margin: 0.5rem 0 1.5rem !important;
+    letter-spacing: 0.02em;
+    font-weight: normal !important;
+    line-height: 1.05;
+}
+html.retro h2,
+html.retro h3 {
+    font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+    color: #ff0000 !important;
+    text-align: center !important;
+    text-decoration: underline;
+}
+
+/* ── Body text & paragraphs ── */
+html.retro p,
+html.retro li {
+    color: #000080 !important;
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: 1.1rem !important;
+    line-height: 1.55 !important;
+}
+
+html.retro a {
+    color: #0000ff !important;
+    text-decoration: underline !important;
+    font-weight: bold;
+}
+html.retro a:visited { color: #800080 !important; }
+html.retro a:hover { background: #ffff00 !important; color: #ff0000 !important; }
+
+/* Reset link colors inside the retro chrome blocks (those use inline <font>) */
+html.retro .retro-footer-block a,
+html.retro .retro-nav a,
+html.retro .retro-marquee a { background: none !important; }
+html.retro .retro-footer-block a:hover { background: #ffff00 !important; color: #ff0000 !important; }
+
+/* ── About page tweaks ── */
+html.retro .about-content { max-width: 100% !important; padding: 0 !important; }
+html.retro .about-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    border-top: 3px dashed #ff00ff;
+    padding-top: 1rem;
+    margin-top: 1.5rem !important;
+}
+
+/* ── Blink (the real <blink> is dead; resurrect it) ── */
+.retro-blink { animation: blink 1s steps(2, start) infinite; }
+@keyframes blink { to { visibility: hidden; } }
+
+/* ── Footer block in retro mode ── */
+.retro-footer-block {
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    margin-top: 2rem;
+}
+.retro-footer-block p { color: #fff !important; }
+.retro-footer-block table { margin: 0 auto; }
+.retro-footer-block img { vertical-align: middle; }
+
+/* ── Project page in retro ── */
+html.retro .project {
+    background: #fffff0 !important;
+    border: 4px ridge #ffcc00 !important;
+    border-radius: 0 !important;
+    box-shadow: 6px 6px 0 #000 !important;
+    color: #000080 !important;
+    padding: 1rem !important;
+    margin-bottom: 1.5rem !important;
+}
+html.retro .logo-link-img {
+    border-radius: 0 !important;
+    border: 4px ridge #c0c0c0;
+    background: #fff;
+    padding: 6px;
+}
+html.retro .logo-link-img:hover {
+    transform: none !important;
+    box-shadow: 6px 6px 0 #ff00ff !important;
+}
+
+/* ── Gallery in retro ── */
+html.retro .gallery-container {
+    column-count: 2 !important;
+    column-gap: 8px !important;
+}
+html.retro .gallery-image,
+html.retro .gallery img {
+    border: 4px ridge #c0c0c0 !important;
+    border-radius: 0 !important;
+    box-shadow: 4px 4px 0 #000 !important;
+    background: #fff;
+    padding: 3px;
+}
+html.retro .nav-tabs { border-bottom-color: #ff00ff !important; }
+html.retro .nav-tabs .nav-link {
+    background: #d4d0c8 !important;
+    border: 3px outset #fff !important;
+    color: #000080 !important;
+    font-family: "Arial Black", sans-serif !important;
+    margin-right: 4px;
+}
+html.retro .nav-tabs .nav-link.active {
+    background: #fffff0 !important;
+    border-bottom-color: #fffff0 !important;
+    color: #ff0000 !important;
+}
+
+/* ── Sparkle cursor trail ── */
+.retro-sparkle {
+    position: fixed;
+    pointer-events: none;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #fff 0%, #ffff00 40%, transparent 70%);
+    border-radius: 50%;
+    z-index: 9999;
+    animation: sparkleFade 700ms forwards;
+}
+@keyframes sparkleFade {
+    0%   { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.2); }
+}
+
+/* ── Article body in retro ── */
+html.retro article,
+html.retro .article-top,
+html.retro .article-bottom {
+    background: transparent !important;
+    color: #000080 !important;
+}
+html.retro article p { font-size: 1.05rem !important; }
+html.retro blockquote {
+    border-left: 4px ridge #ff00ff;
+    padding-left: 12px;
+    font-style: italic;
+    color: #800080 !important;
+}
+
+/* ── Resume page ── */
+html.retro iframe,
+html.retro object {
+    border: 4px ridge #c0c0c0;
+    background: #fff;
+}
+
+/* ── Mobile sanity ── */
+@media (max-width: 600px) {
+    html.retro .wrapper { padding: 1rem !important; }
+    html.retro h1 { font-size: 2rem !important; text-shadow: 2px 2px 0 #00ffff, 4px 4px 0 #ffff00 !important; }
+    .retro-marquee font { font-size: 0.85rem !important; }
+    .retro-nav a { font-size: 0.85rem; padding: 4px 8px; }
+}

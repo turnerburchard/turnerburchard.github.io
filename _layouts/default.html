@@ -5,12 +5,55 @@
     <title>{{ page.title | default: "Turner Burchard" }}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/retro.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <script>
+        // Restore retro mode before paint to avoid a flash
+        try { if (localStorage.getItem('retroMode') === '1') document.documentElement.classList.add('retro'); } catch (e) {}
+    </script>
 </head>
-<body>
+<body bgcolor="#000033" text="#ffffff" link="#00ffff" vlink="#ff00ff">
+<button class="retro-toggle retro-only retro-toggle-floating" type="button" aria-label="Exit retro mode"></button>
 {% include nav.html %}
+
+<!-- ============================================================
+     R E T R O   T O P   C H R O M E   ( c ) 1 9 9 7
+     ============================================================ -->
+<div class="retro-only">
+<center>
+<img src="/files/retro/gifs/32SCQAQVPJXQ5S5MEKY67NN5YK3E6DK7.gif" width="600" height="20" alt="=====">
+<br>
+
+<marquee class="retro-marquee" scrollamount="6" behavior="scroll" direction="left" bgcolor="#000080">
+<font face="Comic Sans MS" color="#ffff00" size="4">
+&nbsp;&nbsp;&nbsp;&nbsp;★ ☆ ★&nbsp;&nbsp;WELCOME TO TURNER'S HOMEPAGE ON THE WORLD WIDE WEB!!!&nbsp;&nbsp;★ ☆ ★&nbsp;&nbsp;PLEASE SIGN MY GUESTBOOK BEFORE YOU LEAVE!!&nbsp;&nbsp;★ ☆ ★&nbsp;&nbsp;THIS PAGE IS UNDER CONSTRUCTION!!!&nbsp;&nbsp;★ ☆ ★&nbsp;&nbsp;BEST VIEWED IN NETSCAPE NAVIGATOR 4.0 AT 800x600!!&nbsp;&nbsp;★ ☆ ★&nbsp;&nbsp;
+</font>
+</marquee>
+
+<img src="/files/retro/gifs/6WTIKNS4Z53OSQ4ZCHWTQUTTUZKXGLRS.gif" width="600" height="20" alt="=====">
+
+<br>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td align="center">
+<font face="Impact" color="#ff00ff" size="7" style="text-shadow:3px 3px 0 #00ffff, 6px 6px 0 #ffff00;">
+TURNER'S HOMEPAGE
+</font>
+</td></tr></table>
+
+</center>
+
+<nav class="retro-nav">
+    <a href="/">[ ABOUT ]</a>
+    <a href="/projects/">[ PROJECTS ]</a>
+    <a href="/gallery/">[ GALLERY ]</a>
+    <a href="/resume.html">[ RESUME ]</a>
+    <a href="/articles/">[ ARTICLES ]</a>
+</nav>
+</div>
+
 {{ content }}
 {% include footer.html %}
+<script src="/js/retro.js"></script>
 {% if page.use_bootstrap_js %}
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
