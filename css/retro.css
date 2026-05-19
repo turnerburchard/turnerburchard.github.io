@@ -155,13 +155,24 @@ html.retro body > *:not(.retro-deco-layer) { position: relative; z-index: 1; }
 
 /* Cap any in-flow chrome image at the viewport so big gifs (e.g. 385×250 under-construction)
    can't push the page horizontally on mobile. Aspect ratio is preserved via the explicit
-   width/height attrs the patch script added.
-   Skip width="100%" images (the rainbow dividers) — they intentionally stretch to a fixed
-   small height regardless of natural aspect ratio. */
-html.retro .wrapper img:not([width="100%"]),
-html.retro .retro-footer-block img:not([width="100%"]) {
+   width/height attrs on the img tag. Rainbow dividers (.retro-hr) get their own rule below. */
+html.retro .wrapper img:not(.retro-hr),
+html.retro .retro-footer-block img:not(.retro-hr) {
     max-width: 100%;
     height: auto;
+}
+
+/* Rainbow dividers: 90s-style ~18px stripe stretched full-width. Several of our
+   divider GIFs are actually near-square (97×91, 91×51, 192×120) — object-fit:cover
+   crops them to look like horizontal rainbow stripes regardless of source aspect. */
+html.retro img.retro-hr {
+    display: block;
+    width: 100%;
+    height: 18px;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin: 0.5rem auto;
 }
 /* Marquee text shouldn't render below its container's edge on narrow viewports either. */
 html.retro .retro-marquee { max-width: 100vw; }
