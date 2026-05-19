@@ -81,22 +81,43 @@ html.retro .retro-toggle::before { content: "[ exit to " attr(data-year) " ]"; }
    FROM HERE DOWN: retro-mode styling
    ============================================================ */
 
-html.retro {
-    background: #000014 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><circle cx='12' cy='8' r='0.4' fill='%23dde'/><circle cx='28' cy='45' r='0.4' fill='%23fff'/><circle cx='62' cy='15' r='0.5' fill='%23ccd'/><circle cx='95' cy='38' r='0.4' fill='%23eef'/><circle cx='130' cy='12' r='0.5' fill='%23fff'/><circle cx='170' cy='32' r='0.4' fill='%23dde'/><circle cx='210' cy='18' r='0.5' fill='%23fff'/><circle cx='8' cy='95' r='0.5' fill='%23ccd'/><circle cx='45' cy='80' r='0.4' fill='%23fff'/><circle cx='100' cy='70' r='0.5' fill='%23dde'/><circle cx='155' cy='95' r='0.4' fill='%23eef'/><circle cx='195' cy='110' r='0.5' fill='%23fff'/><circle cx='225' cy='75' r='0.4' fill='%23ccd'/><circle cx='15' cy='150' r='0.4' fill='%23fff'/><circle cx='55' cy='135' r='0.5' fill='%23dde'/><circle cx='90' cy='165' r='0.4' fill='%23eef'/><circle cx='140' cy='140' r='0.5' fill='%23fff'/><circle cx='180' cy='175' r='0.4' fill='%23ccd'/><circle cx='220' cy='150' r='0.5' fill='%23fff'/><circle cx='20' cy='200' r='0.4' fill='%23dde'/><circle cx='65' cy='220' r='0.5' fill='%23fff'/><circle cx='110' cy='205' r='0.4' fill='%23eef'/><circle cx='160' cy='225' r='0.5' fill='%23fff'/><circle cx='205' cy='215' r='0.4' fill='%23ccd'/><circle cx='75' cy='55' r='1.0' fill='%23fff'/><circle cx='185' cy='65' r='1.0' fill='%23ffe'/><circle cx='115' cy='125' r='1.1' fill='%23fff'/><circle cx='35' cy='180' r='1.0' fill='%23ffe'/><circle cx='195' cy='195' r='1.0' fill='%23fff'/><circle cx='120' cy='25' r='1.8' fill='%23fff'/><circle cx='40' cy='115' r='1.6' fill='%23ffe'/><circle cx='175' cy='160' r='2.0' fill='%23fff'/></svg>") repeat;
+html.retro { background: #000014; }
+/* Starfield lives on the scroll container so stars pan past you while you scroll.
+   background-attachment: local glues stars to the scroll content (matches the
+   original main-branch behavior); without it the stars would track the viewport
+   like the fixed deco GIFs do.
+   The dark base color stays on <html> so the seam never flashes through. */
+html.retro .page-scroller {
+    background-attachment: local;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><circle cx='12' cy='8' r='0.4' fill='%23dde'/><circle cx='28' cy='45' r='0.4' fill='%23fff'/><circle cx='62' cy='15' r='0.5' fill='%23ccd'/><circle cx='95' cy='38' r='0.4' fill='%23eef'/><circle cx='130' cy='12' r='0.5' fill='%23fff'/><circle cx='170' cy='32' r='0.4' fill='%23dde'/><circle cx='210' cy='18' r='0.5' fill='%23fff'/><circle cx='8' cy='95' r='0.5' fill='%23ccd'/><circle cx='45' cy='80' r='0.4' fill='%23fff'/><circle cx='100' cy='70' r='0.5' fill='%23dde'/><circle cx='155' cy='95' r='0.4' fill='%23eef'/><circle cx='195' cy='110' r='0.5' fill='%23fff'/><circle cx='225' cy='75' r='0.4' fill='%23ccd'/><circle cx='15' cy='150' r='0.4' fill='%23fff'/><circle cx='55' cy='135' r='0.5' fill='%23dde'/><circle cx='90' cy='165' r='0.4' fill='%23eef'/><circle cx='140' cy='140' r='0.5' fill='%23fff'/><circle cx='180' cy='175' r='0.4' fill='%23ccd'/><circle cx='220' cy='150' r='0.5' fill='%23fff'/><circle cx='20' cy='200' r='0.4' fill='%23dde'/><circle cx='65' cy='220' r='0.5' fill='%23fff'/><circle cx='110' cy='205' r='0.4' fill='%23eef'/><circle cx='160' cy='225' r='0.5' fill='%23fff'/><circle cx='205' cy='215' r='0.4' fill='%23ccd'/><circle cx='75' cy='55' r='1.0' fill='%23fff'/><circle cx='185' cy='65' r='1.0' fill='%23ffe'/><circle cx='115' cy='125' r='1.1' fill='%23fff'/><circle cx='35' cy='180' r='1.0' fill='%23ffe'/><circle cx='195' cy='195' r='1.0' fill='%23fff'/><circle cx='120' cy='25' r='1.8' fill='%23fff'/><circle cx='40' cy='115' r='1.6' fill='%23ffe'/><circle cx='175' cy='160' r='2.0' fill='%23fff'/></svg>");
 }
 
+/* Lock html and body, scroll inside a nested .page-scroller div. Reason: macOS
+   rubber-band only applies to the root document and direct body scrollers —
+   nested overflow:auto containers stop hard at boundaries in every browser,
+   including Safari (which ignores overscroll-behavior at the root). */
+html.retro {
+    height: 100%;
+    overflow: hidden;
+}
 html.retro body {
     background: transparent !important;
     font-family: "Times New Roman", Times, serif !important;
     color: #ffffff !important;
     margin: 0;
-    overflow-x: clip;                  /* strictly clip — never create a horizontal scroll container */
-    overflow-anchor: none;             /* stop the browser from auto-adjusting scroll when images decode */
-    overscroll-behavior: none;         /* kill rubber-band / pull-to-refresh on both axes */
+    height: 100%;
+    overflow: hidden;
 }
-/* Reserve the scrollbar gutter at all times so layout doesn't jump when
-   content grows past the viewport or images finish loading. */
-html.retro { scrollbar-gutter: stable; }
+html.retro .page-scroller {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: clip;
+    overflow-anchor: none;
+    overscroll-behavior: none;
+    scrollbar-gutter: stable;
+}
 
 /* ── Hide modern nav and footer chrome ── */
 html.retro .site-nav,
