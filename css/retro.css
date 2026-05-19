@@ -25,11 +25,10 @@ html.retro .modern-only { display: none !important; }
 .retro-toggle:hover { opacity: 1; }
 .retro-toggle::before { content: "Best viewed in Netscape Navigator 4.0"; }
 
-/* Top-left exit button — sits in document flow above the marquee, not covering anything */
-.retro-toggle-floating {
-    display: block;
+/* Top exit bar — in-flow, left-aligned, above the marquee in retro mode */
+.retro-exit-bar {
     text-align: left;
-    padding: 0.5rem 0 0 0.5rem;
+    padding: 0.5rem 0.75rem;
 }
 
 html.retro .retro-toggle {
@@ -91,9 +90,9 @@ html.retro body {
     font-family: "Times New Roman", Times, serif !important;
     color: #ffffff !important;
     margin: 0;
-    overflow-x: hidden;
+    overflow-x: clip;                  /* strictly clip — never create a horizontal scroll container */
     overflow-anchor: none;             /* stop the browser from auto-adjusting scroll when images decode */
-    overscroll-behavior-y: none;       /* kill macOS rubber-band that lets you scroll past content */
+    overscroll-behavior: none;         /* kill rubber-band / pull-to-refresh on both axes */
 }
 /* Reserve the scrollbar gutter at all times so layout doesn't jump when
    content grows past the viewport or images finish loading. */
@@ -114,7 +113,7 @@ html.retro .site-footer {
     overflow: hidden;
     contain: strict;          /* fully isolate so the layer can't contribute to document height */
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;           /* dynamic viewport height — adapts to mobile URL-bar show/hide */
 }
 img.retro-deco {
     position: absolute;
@@ -130,8 +129,22 @@ img.retro-deco.drift { animation: drift 30s ease-in-out infinite alternate; }
     to   { transform: translate(24px, -18px) rotate(var(--rot, 0deg)); }
 }
 
-/* Content sits above the deco layer (but don't override fixed-position elements like the floating toggle) */
-html.retro body > *:not(.retro-deco-layer):not(.retro-toggle-floating) { position: relative; z-index: 1; }
+/* Content sits above the deco layer */
+html.retro body > *:not(.retro-deco-layer) { position: relative; z-index: 1; }
+
+/* Cap any in-flow chrome image at the viewport so big gifs (e.g. 385×250 under-construction)
+   can't push the page horizontally on mobile. Aspect ratio is preserved via the explicit
+   width/height attrs the patch script added.
+   Skip width="100%" images (the rainbow dividers) — they intentionally stretch to a fixed
+   small height regardless of natural aspect ratio. */
+html.retro .wrapper img:not([width="100%"]),
+html.retro .retro-footer-block img:not([width="100%"]) {
+    max-width: 100%;
+    height: auto;
+}
+/* Marquee text shouldn't render below its container's edge on narrow viewports either. */
+html.retro .retro-marquee { max-width: 100vw; }
+html.retro table { max-width: 100%; }
 
 /* ── Top marquee (real <marquee>, styled) ── */
 .retro-marquee {
@@ -340,8 +353,42 @@ html.retro object {
 
 /* ── Mobile sanity ── */
 @media (max-width: 600px) {
-    html.retro .wrapper { padding: 1rem !important; }
-    html.retro h1 { font-size: 2rem !important; text-shadow: 2px 2px 0 #00ffff, 4px 4px 0 #ffff00 !important; }
-    .retro-marquee font { font-size: 0.85rem !important; }
-    .retro-nav a { font-size: 0.85rem; padding: 4px 8px; }
+    /* Narrower content card so stars and gifs are visible on the sides */
+    html.retro .wrapper,
+    html.retro #galleryPageContainer.container {
+        max-width: 94vw !important;
+        margin: 1rem auto !important;
+        padding: 1rem !important;
+        box-shadow: 5px 5px 0 #000;
+        border-width: 4px;
+    }
+    /* Tighter top/footer chrome */
+    .retro-marquee font { font-size: 0.75rem !important; }
+    .retro-marquee { padding: 4px 0; }
+    .retro-nav { padding: 6px 4px; }
+    .retro-nav a { font-size: 0.8rem; padding: 3px 6px; margin: 2px; border-width: 2px; }
+    .retro-footer-block { padding: 1rem 0.5rem; }
+    .retro-footer-block table { width: 95% !important; }
+    /* Shrink the giant WordArt sizes */
+    html.retro h1 { font-size: 1.8rem !important; text-shadow: 2px 2px 0 #00ffff, 4px 4px 0 #ffff00 !important; }
+    html.retro h2, html.retro h3 { font-size: 1.2rem !important; }
+    html.retro .retro-only font[size="7"] { font-size: 1.6rem !important; }
+    html.retro .retro-only font[size="6"] { font-size: 1.2rem !important; }
+    html.retro .retro-only font[size="5"] { font-size: 1rem !important; }
+    /* Make ALL ABOUT ME photo + info stack instead of two columns */
+    html.retro .about-content table td[width="220"] {
+        display: block;
+        width: 100% !important;
+    }
+    html.retro .about-content table td[width="220"] + td {
+        display: block;
+        width: 100% !important;
+    }
+    /* Smaller photo */
+    html.retro .about-content img[width="180"] { width: 140px !important; }
+    /* Form inputs full-width */
+    .retro-guestbook-form input[type="text"],
+    .retro-guestbook-form textarea { width: 100%; box-sizing: border-box; }
+    /* Submit button still readable */
+    .retro-submit-btn { font-size: 0.95rem; padding: 6px 14px; }
 }

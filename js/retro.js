@@ -132,15 +132,22 @@
         // Deal from a shuffled pool so no GIF repeats until the pool is exhausted
         var pool = shuffled(DECO_URLS);
         var poolIdx = 0;
-        var count = window.innerWidth < 700 ? 26 : Math.min(75, pool.length);
+        var isMobile = window.innerWidth < 700;
+        var count = isMobile ? 28 : Math.min(75, pool.length);
         // Poisson-disk-ish placement: reject any spot too close to an existing one
         var placed = [];
-        var minDist = window.innerWidth < 700 ? 12 : 8;  // in viewport units
+        var minDist = isMobile ? 11 : 8;  // in viewport units
         var maxAttempts = 60;
         for (var i = 0; i < count; i++) {
             var top, left, ok = false;
             for (var a = 0; a < maxAttempts; a++) {
-                top = rand(-1, 94);
+                // On mobile the content card covers the middle horizontally, so bias toward
+                // the top and bottom edges where decos are actually visible.
+                if (isMobile && Math.random() < 0.75) {
+                    top = Math.random() < 0.5 ? rand(-1, 24) : rand(70, 94);
+                } else {
+                    top = rand(-1, 94);
+                }
                 left = rand(-1, 91);  // leave room on right so decos don't sit over the scrollbar
                 ok = true;
                 for (var p = 0; p < placed.length; p++) {
