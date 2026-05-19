@@ -25,12 +25,11 @@ html.retro .modern-only { display: none !important; }
 .retro-toggle:hover { opacity: 1; }
 .retro-toggle::before { content: "Best viewed in Netscape Navigator 4.0"; }
 
-/* Floating "exit" button — fixed top-right, only in retro mode */
+/* Top-left exit button — sits in document flow above the marquee, not covering anything */
 .retro-toggle-floating {
-    position: fixed;
-    top: 0.75rem;
-    right: 0.75rem;
-    z-index: 9999;
+    display: block;
+    text-align: left;
+    padding: 0.5rem 0 0 0.5rem;
 }
 
 html.retro .retro-toggle {
@@ -84,8 +83,7 @@ html.retro .retro-toggle::before { content: "[ exit to " attr(data-year) " ]"; }
    ============================================================ */
 
 html.retro {
-    background: #000033 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80'><circle cx='12' cy='17' r='0.9' fill='%23ffffff'/><circle cx='45' cy='9' r='0.6' fill='%23ffffff'/><circle cx='62' cy='34' r='1.1' fill='%23ffffff'/><circle cx='23' cy='51' r='0.7' fill='%23ffffff'/><circle cx='53' cy='63' r='0.9' fill='%23ffffff'/><circle cx='6' cy='68' r='0.5' fill='%23ffffff'/><circle cx='71' cy='72' r='0.6' fill='%23ffffff'/><circle cx='33' cy='28' r='0.4' fill='%23ffffff'/></svg>");
-    background-attachment: fixed;
+    background: #000014 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><circle cx='12' cy='8' r='0.4' fill='%23dde'/><circle cx='28' cy='45' r='0.4' fill='%23fff'/><circle cx='62' cy='15' r='0.5' fill='%23ccd'/><circle cx='95' cy='38' r='0.4' fill='%23eef'/><circle cx='130' cy='12' r='0.5' fill='%23fff'/><circle cx='170' cy='32' r='0.4' fill='%23dde'/><circle cx='210' cy='18' r='0.5' fill='%23fff'/><circle cx='8' cy='95' r='0.5' fill='%23ccd'/><circle cx='45' cy='80' r='0.4' fill='%23fff'/><circle cx='100' cy='70' r='0.5' fill='%23dde'/><circle cx='155' cy='95' r='0.4' fill='%23eef'/><circle cx='195' cy='110' r='0.5' fill='%23fff'/><circle cx='225' cy='75' r='0.4' fill='%23ccd'/><circle cx='15' cy='150' r='0.4' fill='%23fff'/><circle cx='55' cy='135' r='0.5' fill='%23dde'/><circle cx='90' cy='165' r='0.4' fill='%23eef'/><circle cx='140' cy='140' r='0.5' fill='%23fff'/><circle cx='180' cy='175' r='0.4' fill='%23ccd'/><circle cx='220' cy='150' r='0.5' fill='%23fff'/><circle cx='20' cy='200' r='0.4' fill='%23dde'/><circle cx='65' cy='220' r='0.5' fill='%23fff'/><circle cx='110' cy='205' r='0.4' fill='%23eef'/><circle cx='160' cy='225' r='0.5' fill='%23fff'/><circle cx='205' cy='215' r='0.4' fill='%23ccd'/><circle cx='75' cy='55' r='1.0' fill='%23fff'/><circle cx='185' cy='65' r='1.0' fill='%23ffe'/><circle cx='115' cy='125' r='1.1' fill='%23fff'/><circle cx='35' cy='180' r='1.0' fill='%23ffe'/><circle cx='195' cy='195' r='1.0' fill='%23fff'/><circle cx='120' cy='25' r='1.8' fill='%23fff'/><circle cx='40' cy='115' r='1.6' fill='%23ffe'/><circle cx='175' cy='160' r='2.0' fill='%23fff'/></svg>") repeat;
 }
 
 html.retro body {
@@ -114,6 +112,9 @@ html.retro .site-footer {
     pointer-events: none;
     z-index: 0;
     overflow: hidden;
+    contain: strict;          /* fully isolate so the layer can't contribute to document height */
+    width: 100vw;
+    height: 100vh;
 }
 img.retro-deco {
     position: absolute;
