@@ -1,0 +1,27 @@
+{% include meta.html %}
+{% assign document_title = page.title | default: site.title %}
+{% if include.reading %}
+  {% if page.layout != "article" %}{% assign document_title = "Articles" %}{% endif %}
+  {% assign document_title = document_title | append: " — Turner Burchard" %}
+{% endif %}
+<title>{{ document_title }}</title>
+{% unless include.reading %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+{% endunless %}
+<link rel="stylesheet" href="/css/main.css">
+{% if include.reading %}
+<link rel="stylesheet" href="/css/reading.css">
+{% else %}
+<link rel="stylesheet" href="/css/retro.css">
+{% endif %}
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+{% unless include.reading %}
+<script>
+  // Restore retro mode before paint to avoid a flash.
+  try {
+    if (localStorage.getItem('retroMode') === '1') {
+      document.documentElement.classList.add('retro');
+    }
+  } catch (error) {}
+</script>
+{% endunless %}
