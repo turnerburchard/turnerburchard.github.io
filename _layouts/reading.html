@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include head.html reading=true %} {% if page.layout == "article" %}{%
+    include math.html %}{% endif %}
+  </head>
+  <body>
+    <header class="article-top">
+      <a href="/">Turner Burchard</a>
+    </header>
+
+    {{ content }}
+
+    <footer class="article-bottom">
+      <p>Turner Burchard</p>
+    </footer>
+  </body>
+</html>

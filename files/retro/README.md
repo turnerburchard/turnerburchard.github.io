@@ -9,9 +9,9 @@ All animated GIFs are real period artifacts originally sourced from **gifcities.
 | File | What it contains |
 |---|---|
 | `js/retro.js` (`DECO_URLS`) | 80 clip-art GIFs used as floating decorations (planets, ufos, mountains, frogs, dogs, etc.) |
-| `_includes/footer.html` | Hit counter, under-construction sign, webring, badges, divider rules, guestbook icons |
-| `_layouts/default.html` | Top-of-page rainbow dividers |
-| `index.html` | Welcome banner, hobby icons, link arrows, "ALL ABOUT ME" divider rules |
+| `_includes/retro/footer.html` | Hit counter, under-construction sign, webring, badges, divider rules, guestbook icons |
+| `_includes/retro/header.html` | Top-of-page rainbow dividers |
+| `_includes/retro/about.html` | Welcome banner, hobby icons, link arrows, "ALL ABOUT ME" divider rules |
 
 ## Adding or replacing GIFs
 
@@ -37,7 +37,7 @@ To add a MIDI player: drop `theme.mid` in this directory and add an opt-in butto
 # from repo root
 mkdir -p files/retro/gifs
 grep -rohE '/files/retro/gifs/[A-Z0-9]+\.gif' \
-  js/retro.js _includes/footer.html _layouts/default.html index.html \
+  js/retro.js _includes/retro/*.html \
   | sort -u \
   | while read path; do
       name=$(basename "$path")
