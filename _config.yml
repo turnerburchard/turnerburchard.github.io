@@ -2,6 +2,9 @@ title: Turner Burchard
 url: https://turnerburchard.com
 permalink: /articles/:title/
 
+include:
+  - _redirects
+
 exclude:
   - wrangler.jsonc
   - README.md

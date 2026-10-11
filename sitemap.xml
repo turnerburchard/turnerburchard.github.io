@@ -11,6 +11,4 @@ layout: null
 {%- for post in site.posts %}
   <url><loc>{{ post.url | absolute_url }}</loc></url>
 {%- endfor %}
-  {%- comment %} Deployed from the paludarium repo, so Jekyll doesn't know about it. {% endcomment %}
-  <url><loc>https://turnerburchard.com/paludarium/</loc></url>
 </urlset>

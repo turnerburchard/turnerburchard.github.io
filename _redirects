@@ -1,0 +1,2 @@
+/paludarium https://paludarium.turnerburchard.com/ 301
+/paludarium/* https://paludarium.turnerburchard.com/:splat 301
